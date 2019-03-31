@@ -1,11 +1,11 @@
 package com.example.endgame;
 
 
+
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,6 +13,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.squareup.picasso.Picasso;
+
 
 
 public class CharacterFragment extends Fragment {
@@ -44,7 +45,7 @@ public class CharacterFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-         if (getArguments() != null) {
+        if (getArguments() != null) {
             character = getArguments().getParcelable(CHARACTER);
         }
     }
@@ -76,6 +77,7 @@ public class CharacterFragment extends Fragment {
         String height = character.getHeight();
         String weight = character.getWeight();
 
+
         quoteTextView.setText(quote);
         characterNameTextView.setText(characterName);
         occupationTextView.setText(occupation);
@@ -88,4 +90,6 @@ public class CharacterFragment extends Fragment {
 
 
     }
+
+
 }
