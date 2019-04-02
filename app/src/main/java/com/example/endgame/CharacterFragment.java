@@ -2,13 +2,18 @@ package com.example.endgame;
 
 
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.text.SpannableString;
+import android.text.style.UnderlineSpan;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -26,6 +31,7 @@ public class CharacterFragment extends Fragment {
     private TextView heightTextView;
     private TextView weightTextView;
     private ImageView characterImageView;
+    private Button historyButton;
     private View view;
 
 
@@ -62,6 +68,7 @@ public class CharacterFragment extends Fragment {
         genderTextView = view.findViewById(R.id.gender_textView);
         heightTextView = view.findViewById(R.id.height_textview);
         weightTextView = view.findViewById(R.id.weight_textview);
+        historyButton = view.findViewById(R.id.history_button);
 
         return view;
     }
@@ -71,7 +78,7 @@ public class CharacterFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         String characterName = character.getName();
-        String quote = character.getQuote();
+        String quote = " \" " +character.getQuote() + " \" ";
         String occupation = character.getOccupation();
         String gender = character.getGender();
         String height = character.getHeight();
@@ -84,9 +91,20 @@ public class CharacterFragment extends Fragment {
         genderTextView.setText(gender);
         heightTextView.setText(height);
         weightTextView.setText(weight);
-        String characterImageUrl = character.getImage();
+        String characterImageUrl = character.getComicImage();
+
+
 
         Picasso.get().load(characterImageUrl).into(characterImageView);
+
+        historyButton.setOnClickListener(v -> {
+            String url = character.getHistory();
+            Intent i = new Intent(Intent.ACTION_VIEW);
+            i.setData(Uri.parse(url));
+            startActivity(i);
+
+
+        });
 
 
     }
