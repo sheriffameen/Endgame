@@ -11,7 +11,8 @@ public class Character implements Parcelable {
     private String weight;
     private String history;
     private String occupation;
-    private String image;
+    private String comicImage;
+    private String realImage;
 
     protected Character(Parcel in) {
         name = in.readString();
@@ -21,7 +22,8 @@ public class Character implements Parcelable {
         weight = in.readString();
         history = in.readString();
         occupation = in.readString();
-        image = in.readString();
+        comicImage = in.readString();
+        realImage = in.readString();
     }
 
     public static final Creator<Character> CREATOR = new Creator<Character>() {
@@ -64,8 +66,12 @@ public class Character implements Parcelable {
         return occupation;
     }
 
-    public String getImage() {
-        return image;
+    public String getComicImage() {
+        return comicImage;
+    }
+
+    public String getRealImage() {
+        return realImage;
     }
 
     @Override
@@ -82,6 +88,7 @@ public class Character implements Parcelable {
         dest.writeString(weight);
         dest.writeString(history);
         dest.writeString(occupation);
-        dest.writeString(image);
+        dest.writeString(comicImage);
+        dest.writeString(realImage);
     }
 }
