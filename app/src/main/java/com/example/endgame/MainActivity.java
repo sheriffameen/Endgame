@@ -5,7 +5,6 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -13,7 +12,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class MainActivity extends AppCompatActivity implements Callback<CharacterResponse> {
+public class MainActivity extends AppCompatActivity implements Callback<CharacterResponse>,CharacterNavigator {
     final List<Fragment> fragmentList = new ArrayList<>();
 
 
@@ -39,8 +38,8 @@ public class MainActivity extends AppCompatActivity implements Callback<Characte
         Log.d(TAG, characters.toString());
 
         for (Character character : characters){
-           CharacterFragment characterFragment = CharacterFragment.newInstance(character);
-           fragmentList.add(characterFragment);
+           EndgameFragment endgameFragment = EndgameFragment.newInstance(character);
+           fragmentList.add(endgameFragment);
 
 
         }
@@ -55,5 +54,18 @@ public class MainActivity extends AppCompatActivity implements Callback<Characte
         Log.d(TAG, t.toString());
 
 
+    }
+
+    @Override
+    public void toCharacterFragment(Character character) {
+        CharacterFragment characterFragment = CharacterFragment.newInstance(character);
+        inflateFragment(characterFragment);
+
+    }
+
+    private void inflateFragment(Fragment fragment){
+        getSupportFragmentManager().beginTransaction()
+                .replace(R.id.main_container,fragment).addToBackStack(null)
+                .commit();
     }
 }
