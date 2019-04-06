@@ -1,4 +1,6 @@
-package com.example.endgame;
+package com.example.endgame.model;
+
+import com.example.endgame.model.Character;
 
 import java.util.List;
 

@@ -1,4 +1,4 @@
-package com.example.endgame;
+package com.example.endgame.adapter;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;

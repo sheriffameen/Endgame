@@ -1,4 +1,4 @@
-package com.example.endgame;
+package com.example.endgame.fragments;
 
 
 
@@ -15,6 +15,8 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.endgame.model.Character;
+import com.example.endgame.R;
 import com.squareup.picasso.Picasso;
 
 
@@ -58,7 +60,7 @@ public class CharacterFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        view = inflater.inflate(R.layout.fragment_blank, container, false);
+        view = inflater.inflate(R.layout.character_fragment, container, false);
         characterNameTextView = view.findViewById(R.id.name_textView);
         characterImageView = view.findViewById(R.id.imageView);
         quoteTextView = view.findViewById(R.id.quote_textView);

@@ -1,4 +1,4 @@
-package com.example.endgame;
+package com.example.endgame.fragments;
 
 
 import android.content.Context;
@@ -12,6 +12,9 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.endgame.model.Character;
+import com.example.endgame.navigator.CharacterNavigator;
+import com.example.endgame.R;
 import com.squareup.picasso.Picasso;
 
 
@@ -25,7 +28,6 @@ public class EndgameFragment extends Fragment {
 
 
     public EndgameFragment() {
-        // Required empty public constructor
     }
 
 
@@ -49,7 +51,7 @@ public class EndgameFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        view =  inflater.inflate(R.layout.fragment_endgame, container, false);
+        view =  inflater.inflate(R.layout.endgame_fragment, container, false);
         characterNameTextView = view.findViewById(R.id.endgameName_textView);
         characterImageView = view.findViewById(R.id.endgameCharacter_imageView);
 
@@ -66,7 +68,6 @@ public class EndgameFragment extends Fragment {
         Picasso.get().load(realImage).into(characterImageView);
 
         characterNameTextView.setOnClickListener(v -> onButtonPressed(character));
-
 
     }
 
@@ -87,4 +88,10 @@ public class EndgameFragment extends Fragment {
             characterNavigator.toCharacterFragment(character);
         }
     }
+
+
+
+
+
+
 }

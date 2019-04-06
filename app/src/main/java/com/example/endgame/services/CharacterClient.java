@@ -1,4 +1,6 @@
-package com.example.endgame;
+package com.example.endgame.services;
+
+import com.example.endgame.model.CharacterResponse;
 
 import retrofit2.Call;
 import retrofit2.Retrofit;
