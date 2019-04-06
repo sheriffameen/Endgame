@@ -28,7 +28,7 @@ public class SplashActivity extends AppCompatActivity {
 
         new Handler().postDelayed(() -> {
 
-            toEndGameFragment = new Intent(SplashActivity.this, MainActivity.class);
+            toEndGameFragment = new Intent(SplashActivity.this, HomePageActivity.class);
             startActivity(toEndGameFragment);
             finish();
         }, SPLASH_SCREEN_TIMER);
