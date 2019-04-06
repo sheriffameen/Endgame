@@ -1,4 +1,4 @@
-package com.example.endgame;
+package com.example.endgame.model;
 
 import android.os.Parcel;
 import android.os.Parcelable;

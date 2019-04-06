@@ -1,4 +1,4 @@
-package com.example.endgame;
+package com.example.endgame.activities;
 
 import android.content.Intent;
 import android.os.Handler;
@@ -7,11 +7,12 @@ import android.os.Bundle;
 import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
+import com.example.endgame.R;
 
 public class SplashActivity extends AppCompatActivity {
     private ImageView splashImage;
-    private static int SPLASH_SCREEN_TIMER = 6000;
-    private Intent toLoginScreenIntent;
+    private static int SPLASH_SCREEN_TIMER = 2000;
+    private Intent toEndGameFragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,8 +28,8 @@ public class SplashActivity extends AppCompatActivity {
 
         new Handler().postDelayed(() -> {
 
-            toLoginScreenIntent = new Intent(SplashActivity.this, MainActivity.class);
-            startActivity(toLoginScreenIntent);
+            toEndGameFragment = new Intent(SplashActivity.this, MainActivity.class);
+            startActivity(toEndGameFragment);
             finish();
         }, SPLASH_SCREEN_TIMER);
     }
