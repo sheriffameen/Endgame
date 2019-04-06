@@ -58,6 +58,8 @@ public class MainActivity extends AppCompatActivity implements Callback<Characte
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.contact_menu, menu);
+        menu.getItem(0).setIcon(R.drawable.linkedin_icon);
+        menu.getItem(1).setIcon(R.drawable.github_icon);
         return true;
 
     }
