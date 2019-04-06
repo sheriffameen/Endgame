@@ -11,7 +11,7 @@ import com.example.endgame.R;
 
 public class SplashActivity extends AppCompatActivity {
     private ImageView splashImage;
-    private static int SPLASH_SCREEN_TIMER = 2000;
+    private static int SPLASH_SCREEN_TIMER = 2500;
     private Intent toEndGameFragment;
 
     @Override

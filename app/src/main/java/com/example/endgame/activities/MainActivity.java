@@ -32,16 +32,11 @@ public class MainActivity extends AppCompatActivity implements Callback<Characte
 
 
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         getCharacters();
-
-
-
     }
 
     public void getCharacters(){
@@ -49,19 +44,10 @@ public class MainActivity extends AppCompatActivity implements Callback<Characte
         characterResponseCall.enqueue(this);
     }
 
-
-
-
-
-
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.contact_menu, menu);
-        menu.getItem(0).setIcon(R.drawable.linkedin_icon);
-        menu.getItem(1).setIcon(R.drawable.github_icon);
         return true;
-
     }
 
     @Override
@@ -69,17 +55,12 @@ public class MainActivity extends AppCompatActivity implements Callback<Characte
         CharacterResponse characterResponse = response.body();
         List<Character> characters = characterResponse.getCharacters();
         Log.d(TAG, characters.toString());
-
         for (Character character : characters){
             EndgameFragment endgameFragment = EndgameFragment.newInstance(character);
             fragmentList.add(endgameFragment);
-
-
         }
         ViewPager viewPager = findViewById(R.id.mainActivity_viewPager);
         viewPager.setAdapter(new ViewPagerAdapter(getSupportFragmentManager(),fragmentList));
-
-
     }
 
     @Override
@@ -113,15 +94,12 @@ public class MainActivity extends AppCompatActivity implements Callback<Characte
                 return true;
             default:
                 return false;
-
         }
     }
 
     public void linkIntent(String link){
-
         Intent openLink = new Intent(Intent.ACTION_VIEW);
         openLink.setData(Uri.parse(link));
-
         if (openLink.resolveActivity(getPackageManager()) != null) {
             startActivity(openLink);
         }
