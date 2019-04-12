@@ -68,7 +68,7 @@ public class CharacterFragment extends Fragment {
         genderTextView = view.findViewById(R.id.gender_textView);
         heightTextView = view.findViewById(R.id.height_textview);
         weightTextView = view.findViewById(R.id.weight_textview);
-        historyButton = view.findViewById(R.id.history_button);
+        historyButton = view.findViewById(R.id.thanosHistory_button);
 
         return view;
     }

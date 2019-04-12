@@ -195,7 +195,7 @@
 
 
         <Button
-            android:id="@+id/history_button"
+            android:id="@+id/thanosHistory_button"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
