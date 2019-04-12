@@ -17,7 +17,7 @@ import com.example.endgame.navigator.CharacterNavigator;
 import com.example.endgame.R;
 import com.example.endgame.fragments.CharacterFragment;
 import com.example.endgame.model.Character;
-import com.example.endgame.services.CharacterClient;
+import com.example.endgame.services.MarvelClient;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -27,7 +27,7 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class MainActivity extends AppCompatActivity implements Callback<CharacterResponse>, CharacterNavigator {
-    final List<Fragment> fragmentList = new ArrayList<>();
+    public static final List<Fragment> fragmentList = new ArrayList<>();
     private static final String TAG = "Main Fragment";
 
 
@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity implements Callback<Characte
     }
 
     public void getCharacters(){
-        Call<CharacterResponse> characterResponseCall = CharacterClient.getInstance().getCharacterResponse();
+        Call<CharacterResponse> characterResponseCall = MarvelClient.getInstance().getCharacterResponse();
         characterResponseCall.enqueue(this);
     }
 
