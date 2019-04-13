@@ -18,13 +18,12 @@
 
     <ImageView
         android:id="@+id/thanos_imageView"
-        android:layout_width="322dp"
+        android:layout_width="286dp"
         android:layout_height="259dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/thanosHistory_button"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/thanosName_textView"
         tools:src="@tools:sample/avatars" />
@@ -32,7 +31,7 @@
     <TextView
         android:id="@+id/thanosName_textView"
         android:layout_width="0dp"
-        android:layout_height="48dp"
+        android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
         android:fontFamily="@font/bangers"
         android:gravity="center"
@@ -48,10 +47,14 @@
 
     <LinearLayout
         android:id="@+id/linearlayout"
-        android:layout_width="match_parent"
+        android:layout_width="409dp"
         android:layout_height="28dp"
+        android:layout_marginEnd="16dp"
         android:orientation="horizontal"
-        app:layout_constraintTop_toBottomOf="@id/thanos_imageView">
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/scrollView"
+        app:layout_constraintLeft_toRightOf="@id/thanos_imageView"
+        tools:layout_editor_absoluteY="315dp">
 
         <ImageView
             android:id="@+id/height_imageView"
@@ -66,15 +69,16 @@
             android:text="height "
             android:textColor="@color/colorWhite"
             android:textSize="20sp" />
+
         <TextView
             android:id="@+id/thanosHeight_textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/bangers"
-            android:textSize="20sp"
-            android:textColor="@color/colorWhite"
             android:layout_marginStart="4dp"
-            android:text="10'0 "/>
+            android:fontFamily="@font/bangers"
+            android:text="10'0 "
+            android:textColor="@color/colorWhite"
+            android:textSize="20sp" />
 
         <ImageView
             android:layout_width="26dp"
@@ -89,19 +93,21 @@
             android:text="weight "
             android:textColor="@color/colorWhite"
             android:textSize="20sp" />
+
         <TextView
             android:id="@+id/thanosWeight_textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/bangers"
-            android:textSize="20sp"
-            android:textColor="@color/colorWhite"
             android:layout_marginStart="4dp"
-            android:text="2000lbs "/>
+            android:fontFamily="@font/bangers"
+            android:text="2000lbs "
+            android:textColor="@color/colorWhite"
+            android:textSize="20sp" />
+
         <ImageView
             android:layout_width="26dp"
-            android:layout_marginStart="10dp"
             android:layout_height="match_parent"
+            android:layout_marginStart="10dp"
             android:src="@drawable/icons8_gender_64" />
 
         <TextView
@@ -111,38 +117,41 @@
             android:text="gender "
             android:textColor="@color/colorWhite"
             android:textSize="20sp" />
+
         <TextView
             android:id="@+id/thanosGender_textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/bangers"
-            android:textSize="20sp"
-            android:textColor="@color/colorWhite"
             android:layout_marginStart="4dp"
-            android:text="Male "/>
+            android:fontFamily="@font/bangers"
+            android:text="Male "
+            android:textColor="@color/colorWhite"
+            android:textSize="20sp" />
     </LinearLayout>
 
     <TextView
         android:id="@+id/anyWords_textView"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="100dp"
         android:fontFamily="@font/bangers"
         android:text="any words? "
         android:textColor="@color/colorWhite"
         android:textSize="20sp"
-        app:layout_constraintTop_toBottomOf="@id/linearlayout"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"/>
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintLeft_toRightOf="@id/occupation_textView"
+        app:layout_constraintTop_toBottomOf="@id/thanosName_textView" />
 
     <ScrollView
         android:id="@+id/scrollView"
-        android:layout_width="match_parent"
-        android:layout_height="82dp"
+        android:layout_width="221dp"
+        android:layout_height="132dp"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        app:layout_constraintTop_toBottomOf="@id/anyWords_textView"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent">
+        android:layout_marginEnd="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/occupation_scrollView"
+        app:layout_constraintTop_toBottomOf="@+id/anyWords_textView">
 
         <TextView
             android:id="@+id/thanosQuote_textView"
@@ -157,22 +166,23 @@
         android:id="@+id/occupation_textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
+        android:layout_marginTop="8dp"
         android:fontFamily="@font/bangers"
         android:text="occupation "
         android:textColor="@color/colorWhite"
         android:textSize="20sp"
-        app:layout_constraintTop_toBottomOf="@id/scrollView"
+        app:layout_constraintTop_toBottomOf="@id/thanosName_textView"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent" />
 
     <ScrollView
         android:id="@+id/occupation_scrollView"
-        android:layout_width="match_parent"
-        android:layout_height="68dp"
-        app:layout_constraintTop_toBottomOf="@id/occupation_textView"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent">
+        android:layout_width="170dp"
+        android:layout_height="145dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toEndOf="@+id/thanos_imageView"
+        app:layout_constraintTop_toBottomOf="@+id/occupation_textView">
 
         <TextView
             android:id="@+id/thanosOccupation_textView"
@@ -187,7 +197,7 @@
     <Button
         android:id="@+id/thanosHistory_button"
         android:layout_width="match_parent"
-        android:layout_height="51dp"
+        android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
         android:background="@android:drawable/dialog_holo_dark_frame"
         android:fontFamily="@font/bangers"
@@ -196,7 +206,5 @@
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/occupation_scrollView" />
-
+        app:layout_constraintRight_toRightOf="parent" />
 </android.support.constraint.ConstraintLayout>

@@ -84,7 +84,7 @@ public class ThanosFragment extends Fragment {
         Picasso.get().load(thanos.getFirstImage()).into(thanosImageView);
         thanosWeightTextview.setText(thanos.getWeight());
         thanosGenderTextview.setText(thanos.getGender());
-        thanosQuoteTextview.setText(thanos.getQuote());
+        thanosQuoteTextview.setText(" \" " +thanos.getQuote() + " \" ");
         thanosOccupationTextview.setText(thanos.getOccupation());
         thanosHistoryButton.setOnClickListener(v -> {
             String url = thanos.getHistory();
