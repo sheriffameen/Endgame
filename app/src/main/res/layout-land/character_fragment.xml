@@ -25,7 +25,6 @@
             android:id="@+id/name_textView"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="0dp"
             android:fontFamily="@font/bangers"
             android:gravity="center"
             android:text="NAME"
@@ -33,7 +32,6 @@
             android:textColor="@color/colorWhite"
             android:textSize="36sp"
             android:textStyle="bold"
-            app:layout_constraintBottom_toTopOf="@id/imageView"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
@@ -41,12 +39,11 @@
 
         <ScrollView
             android:id="@+id/scrollView3"
-            android:layout_width="0dp"
-            android:layout_height="266dp"
+            android:layout_width="266dp"
+            android:layout_height="94dp"
             android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toEndOf="@id/imageView"
             app:layout_constraintTop_toBottomOf="@+id/anyWords_textView">
 
             <TextView
@@ -64,19 +61,21 @@
         <ImageView
             android:id="@+id/imageView"
             android:layout_width="229dp"
-            android:layout_height="334dp"
+            android:layout_height="220dp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/name_textView"
+            app:layout_constraintTop_toBottomOf="@+id/name_textView"
             tools:src="@tools:sample/avatars" />
 
 
         <RelativeLayout
             android:id="@+id/relative_layout"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            app:layout_constraintLeft_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/imageView">
+            android:layout_marginTop="8dp"
+            android:orientation="vertical"
+            app:layout_constraintLeft_toRightOf="@id/imageView"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/scrollView">
 
             <ImageView
                 android:id="@+id/imageView2"
@@ -168,23 +167,16 @@
 
         </RelativeLayout>
 
-        <TextView
-            android:id="@+id/occupationText_textview"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textSize="20sp"
-            android:text="occupation"
-            android:textAlignment="center"
-            android:textColor="@color/colorWhite"
-            android:fontFamily="@font/bangers"
-            app:layout_constraintTop_toBottomOf="@id/relative_layout"/>
-
         <ScrollView
             android:id="@+id/scrollView"
-            android:layout_width="match_parent"
-            android:layout_height="101dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/occupationText_textview">
+            android:layout_width="211dp"
+            android:layout_height="127dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="44dp"
+            android:layout_marginEnd="20dp"
+            app:layout_constraintEnd_toStartOf="@+id/scrollView3"
+            app:layout_constraintStart_toEndOf="@+id/imageView"
+            app:layout_constraintTop_toBottomOf="@+id/name_textView">
 
             <TextView
                 android:id="@+id/occupation_textView"
@@ -206,8 +198,9 @@
 
         <Button
             android:id="@+id/thanosHistory_button"
-            android:layout_width="0dp"
-            android:layout_height="48dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
             android:background="@android:drawable/dialog_holo_dark_frame"
             android:fontFamily="@font/bangers"
             android:text=" History "
@@ -231,8 +224,24 @@
             android:textSize="24sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/imageView"
+            app:layout_constraintStart_toStartOf="@+id/scrollView3"
             app:layout_constraintTop_toBottomOf="@id/name_textView" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:fontFamily="@font/bangers"
+            android:text="Occupation"
+            android:textAlignment="center"
+            android:textColor="@android:color/white"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toStartOf="@+id/anyWords_textView"
+            app:layout_constraintStart_toEndOf="@+id/imageView"
+            app:layout_constraintTop_toBottomOf="@id/name_textView"
+            tools:layout_editor_absoluteY="44dp" />
 
 
     </android.support.constraint.ConstraintLayout>

@@ -11,17 +11,18 @@ import android.widget.Button;
 import android.widget.VideoView;
 
 import com.example.endgame.R;
-import com.example.endgame.ThanosEndgameFragment;
+import com.example.endgame.fragments.ThanosEndgameFragment;
 import com.example.endgame.fragments.ThanosFragment;
 import com.example.endgame.model.Thanos;
 import com.example.endgame.model.ThanosResponse;
+import com.example.endgame.navigator.ThanosNavigator;
 import com.example.endgame.services.MarvelClient;
 
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class HomePageActivity extends AppCompatActivity implements Callback<ThanosResponse> ,ThanosNavigator{
+public class HomePageActivity extends AppCompatActivity implements Callback<ThanosResponse> , ThanosNavigator {
     private static final String TAG = "HomePageActivity";
     private VideoView videoView;
     private MediaPlayer mediaPlayer;

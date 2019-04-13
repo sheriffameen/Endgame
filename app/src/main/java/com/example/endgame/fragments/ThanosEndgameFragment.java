@@ -1,4 +1,4 @@
-package com.example.endgame;
+package com.example.endgame.fragments;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -11,10 +11,9 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.example.endgame.activities.ThanosNavigator;
-import com.example.endgame.model.Character;
+import com.example.endgame.R;
+import com.example.endgame.navigator.ThanosNavigator;
 import com.example.endgame.model.Thanos;
-import com.example.endgame.navigator.CharacterNavigator;
 import com.squareup.picasso.Picasso;
 
 

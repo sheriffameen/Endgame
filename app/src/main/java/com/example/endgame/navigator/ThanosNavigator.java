@@ -1,4 +1,4 @@
-package com.example.endgame.activities;
+package com.example.endgame.navigator;
 
 import com.example.endgame.model.Thanos;
 
